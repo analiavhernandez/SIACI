@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<datasources>
+  <xa-datasource>
+    <jndi-name>SiaciDS</jndi-name>
+    <track-connection-by-tx>true</track-connection-by-tx> 
+    <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+    <xa-datasource-property name="ServerName">localhost</xa-datasource-property>
+    <xa-datasource-property name="PortNumber">5432</xa-datasource-property>
+    <xa-datasource-property name="DatabaseName">[Base Datos siaci]</xa-datasource-property>
+    <xa-datasource-property name="User">[USUARIO]</xa-datasource-property>
+    <xa-datasource-property name="Password">[PASSWORD]</xa-datasource-property>
+
+       
+    <new-connection-sql>select 1</new-connection-sql>
+    <check-valid-connection-sql>select 1</check-valid-connection-sql>
+
+
+    <metadata>
+       <type-mapping>PostgreSQL</type-mapping>
+    </metadata>
+
+  </xa-datasource>
+  
+  <xa-datasource>
+    <jndi-name>JbpmDS</jndi-name>
+    <track-connection-by-tx>true</track-connection-by-tx> 
+    <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+    <xa-datasource-property name="ServerName">localhost</xa-datasource-property>
+    <xa-datasource-property name="PortNumber">5432</xa-datasource-property>
+    <xa-datasource-property name="DatabaseName">jbpm</xa-datasource-property>
+    <xa-datasource-property name="User">[USUARIO]</xa-datasource-property>
+    <xa-datasource-property name="Password">[PASSWORD]</xa-datasource-property>
+
+       
+    <new-connection-sql>select 1</new-connection-sql>
+    <check-valid-connection-sql>select 1</check-valid-connection-sql>
+
+      
+    <metadata>
+       <type-mapping>PostgreSQL</type-mapping>
+    </metadata>
+
+  </xa-datasource>
+</datasources>
