@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="LIQBEN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cabecera"/>
+        <xs:element ref="beneficios"/>
+        <xs:element ref="trailer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cabecera">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="codEntidadEmisor" type="xs:string"/>
+        <xs:element name="codEntidadDestino" type="xs:string"/>
+        <xs:element name="codEnvio" type="xs:integer"/>
+        <xs:element name="periodoEmision" type="xs:integer"/>
+        <xs:element name="fechaGene" type="xs:integer"/>
+        <xs:element name="codigoMonedaPagador" type="xs:string"/>
+        <xs:element name="coeficienteCambio" type="xs:float"/>
+        <xs:element name="codigoMonedaGestor" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="beneficios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Beneficio"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Beneficio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nroPadron" type="xs:integer"/>
+        <xs:element name="tipoPrestacion"/>
+        <xs:element name="identPrestacion" type="xs:integer"/>
+        <xs:element name="periodoLiquidado" type="xs:integer"/>
+        <xs:element name="fechaInicialCredito" type="xs:string"/>
+        <xs:element name="fechaFinalCredito" type="xs:string"/>
+        <xs:element name="importeBrutoMonedaOrigen" type="xs:float"/>
+        <xs:element name="descuentosMonedaOrigen" type="xs:float"/>
+        <xs:element name="importeNetoMonedaOrigen" type="xs:float"/>
+        <xs:element name="importeNetoMonedaPago" type="xs:float"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trailer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="codEntidadEmisor" type="xs:string"/>
+        <xs:element name="codEntidadDestino" type="xs:string"/>
+        <xs:element name="codEnvio" type="xs:integer"/>
+        <xs:element name="periodoEmision" type="xs:integer"/>
+        <xs:element name="cantidadRegistros" type="xs:integer"/>
+        <xs:element name="sumaImporteNetoMonedaPago" type="xs:float"/>
+      </xs:sequence>      
+    </xs:complexType>
+  </xs:element>
+ </xs:schema>
